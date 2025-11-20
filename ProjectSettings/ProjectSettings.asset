@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 1dce1349fb84b2e47943562975397385
+  productGUID: 0b005f7c6ad3e774e9db3738b6a6eeb9
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Quest 'n Guns
+  productName: Quest_n_Guns
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -602,14 +602,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Quest 'n Guns
+  metroPackageName: Quest_n_Guns
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Quest 'n Guns
+  metroApplicationDescription: Quest_n_Guns
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -680,11 +680,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7a9371c1-399d-4434-863f-88828b1e6a30
+  cloudProjectId: 770bf52f-78ff-4ae1-88d5-189cdb59770b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Quest 'n Guns 2025-11-16_11-56-38
-  organizationId: pedrohenriquelunalessa
+  projectName: Quest_n_Guns 2025-11-19_10-04-48
+  organizationId: fernandesvinicius587
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
