@@ -65,7 +65,6 @@
     <Compile Include="Assets\Scripts\Game\Enemie\PlayerAwarenessController.cs" />
     <Compile Include="Assets\Scripts\Game\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyMovement.cs" />
-    <Compile Include="Assets\Scripts\Jogador.cs" />
     <Compile Include="Assets\Scripts\Game\Player\PlayerShoot.cs" />
   </ItemGroup>
   <ItemGroup>
