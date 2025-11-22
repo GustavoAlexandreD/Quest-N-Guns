@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   speed: 1
+  randomMoveChangeInterval: 5
 --- !u!114 &3253238749099260761
 MonoBehaviour:
   m_ObjectHideFlags: 0
