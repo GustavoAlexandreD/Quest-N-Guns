@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8608909455211107996}
   - component: {fileID: 3253238749099260761}
   - component: {fileID: 530506518941309288}
+  - component: {fileID: 8859103074121426162}
   m_Layer: 0
   m_Name: Enemie
   m_TagString: Untagged
@@ -216,3 +217,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.07, y: -0.38}
   m_Radius: 7
+--- !u!114 &8859103074121426162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716213014644057219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85554a6c7200b734b9669bea46db92f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damageAmount: 10
