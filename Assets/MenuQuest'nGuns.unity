@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &10563893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ RectTransform:
   m_Father: {fileID: 1661803933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.35, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2989,8 +2989,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1103997907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.43137255, y: 0}
+  m_AnchorMax: {x: 0.43137255, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3058,7 +3058,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 953234705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cdd19a777d34c468348f80f0cd4c3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cf5eca002f50cc46b83f8581b551d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   defaultVolume: 1
@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856341420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574f12a9b7933fc439e3c634ac5ef011, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c6f3c8c3b93772448c3894910a6a35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicVolumeSlider
   slider: {fileID: 1156668800}
@@ -5420,7 +5420,7 @@ RectTransform:
   m_Father: {fileID: 1405805394}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.43137255, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5732,8 +5732,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1161856824}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.35, y: 0}
+  m_AnchorMax: {x: 0.35, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5917,11 +5917,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 953234707}
+  - {fileID: 1121476684}
   - {fileID: 1230569686}
   - {fileID: 74835609}
   - {fileID: 177927223}
   - {fileID: 478201020}
   - {fileID: 1063927318}
-  - {fileID: 953234707}
   - {fileID: 1856341422}
-  - {fileID: 1121476684}
