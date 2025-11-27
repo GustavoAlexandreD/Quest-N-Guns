@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] 
     private GameObject painelConfirmacaoSaida;
 
+    [SerializeField] 
+    private GameObject painelLobby;
+
     // Opcional: Para evitar que o usuário clique em botões enquanto o jogo carrega
     //[SerializeField]
     //private float tempoDeEsperaAntesDeCarregar = 0.5f;
@@ -76,7 +79,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    
     public void SairJogo()
     {
         Debug.Log("Saindo do Jogo..."); // Boa Prática: Log para debug
@@ -89,6 +91,25 @@ public class MenuManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    public void AbrirLobby()
+    {
+        // Boa Prática: Checagem de nulo antes de tentar acessar o objeto
+        if (painelMenuPrincipal != null && painelLobby != null)
+        {
+            painelMenuPrincipal.SetActive(false);
+            painelLobby.SetActive(true);
+        }
+    }
+
+    public void FecharLobby()
+    {
+        if (painelMenuPrincipal != null && painelLobby != null)
+        {
+            painelLobby.SetActive(false);
+            painelMenuPrincipal.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -112,5 +133,16 @@ public class MenuManager : MonoBehaviour
 //             // Atualizar UI de barra de progresso aqui
 //             yield return null;
 //         }
-//     }
+//     }    
+    // public void Jogar(){
+    //     List<string> temas = TemaManager.Instance.GetTemasAtivos();
+
+    //     // Exemplo
+    //     foreach (string t in temas){
+    //         Debug.Log("Tema ativo: " + t);
+    //     }
+    //     // Aqui você carregaria sua cena normalmente
+    //     SceneManager.LoadScene(nomeDaCenaDoJogo);
+    // }
+
 }
