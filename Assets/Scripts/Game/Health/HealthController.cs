@@ -29,6 +29,8 @@ public class HealthController : MonoBehaviour
     // Evento chamado quando o personagem recebe dano mas não morre
     public UnityEvent OnDamage;
 
+    public UnityEvent OnHealthChanged;
+
     // Método responsável por aplicar dano ao personagem
     public void TakeDamage(float amount)
     {
@@ -46,6 +48,8 @@ public class HealthController : MonoBehaviour
 
         // Subtrai o dano da vida atual
         currentHealth -= amount;
+
+        OnHealthChanged.Invoke();
 
         // Impede que a vida fique negativa
         if (currentHealth < 0)
@@ -76,6 +80,8 @@ public class HealthController : MonoBehaviour
 
         // Soma vida
         currentHealth += amount;
+
+        OnHealthChanged.Invoke();
 
         // Impede que ultrapasse a vida máxima
         if (currentHealth > maximumHealth)
