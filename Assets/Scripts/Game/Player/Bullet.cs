@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
+    private float damageAmount = 20f; // Dano da bala
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Acerta inimigo
-        EnemyMovement enemy = collision.GetComponent<EnemyMovement>();
-        if (enemy != null)
+        // Verifica se acertou um inimigo
+        var health = collision.GetComponent<HealthController>();
+        if (health != null && collision.GetComponent<EnemyMovement>())
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            health.TakeDamage(damageAmount);
+            Destroy(gameObject); // destrói só a bala
             return;
         }
 
-        // Acerta parede
+        // Acertou parede
         if (collision.CompareTag("wall"))
         {
             Destroy(gameObject);
