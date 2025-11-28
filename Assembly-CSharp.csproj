@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Game\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Game\Health\EnemyHealthBarUI.cs" />
     <Compile Include="Assets\Scripts\Game\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Scripts\music\MusicSelector.cs" />
     <Compile Include="Assets\Scripts\BrilhoGlobal.cs" />
