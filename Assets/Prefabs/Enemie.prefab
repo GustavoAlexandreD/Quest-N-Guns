@@ -101,7 +101,7 @@ RectTransform:
   m_GameObject: {fileID: 2188477939277347611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 197035219556799285}
@@ -155,7 +155,7 @@ RectTransform:
   m_GameObject: {fileID: 5954689440661919518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.02, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.02, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7535071047365644029}
@@ -385,7 +385,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8608909455211107996
 MonoBehaviour:
   m_ObjectHideFlags: 0
