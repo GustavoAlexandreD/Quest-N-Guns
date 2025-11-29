@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a656d7c88cbf04093bb217463e4c9e, type: 3}
+  m_Name: MatMedio02
+  m_EditorClassIdentifier: Assembly-CSharp::DadosDaQuestao
+  tema: "Matem\xE1tica"
+  dificuldade: 1
+  enunciado: "Qual \xE9 a \xE1rea de um c\xEDrculo com raio de 3 cm? (Use pi=3,14)"
+  alternativas:
+  - "12,56 cm\xB2"
+  - "18,84 cm\xB2"
+  - "9,42 cm\xB2"
+  - "28,26 cm\xB2"
+  indiceCorreto: 3

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a656d7c88cbf04093bb217463e4c9e, type: 3}
+  m_Name: FisFacil02
+  m_EditorClassIdentifier: Assembly-CSharp::DadosDaQuestao
+  tema: "F\xEDsica"
+  dificuldade: 0
+  enunciado: "O que a primeira lei de Newton (In\xE9rcia) afirma?"
+  alternativas:
+  - "A\xE7\xE3o e Rea\xE7\xE3o s\xE3o iguais"
+  - A Gravidade atrai dois corpos
+  - "For\xE7a \xE9 massa x acelera\xE7\xE3o"
+  - "Um corpo tende a permanecer em seu estado de movimento a menos que uma for\xE7a
+    atue sobre ele"
+  indiceCorreto: 3

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a656d7c88cbf04093bb217463e4c9e, type: 3}
+  m_Name: HistFacil02
+  m_EditorClassIdentifier: Assembly-CSharp::DadosDaQuestao
+  tema: "Hist\xF3ria"
+  dificuldade: 0
+  enunciado: "Em que ano come\xE7ou a Segunda Guerra Mundial?"
+  alternativas:
+  - 1914
+  - 1929
+  - 1945
+  - 1939
+  indiceCorreto: 3

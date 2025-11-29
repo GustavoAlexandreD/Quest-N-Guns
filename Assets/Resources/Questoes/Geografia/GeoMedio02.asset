@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a656d7c88cbf04093bb217463e4c9e, type: 3}
+  m_Name: GeoMedio02
+  m_EditorClassIdentifier: Assembly-CSharp::DadosDaQuestao
+  tema: Geografia
+  dificuldade: 0
+  enunciado: "O que \xE9 o movimento de rota\xE7\xE3o da Terra?"
+  alternativas:
+  - "Movimento das placas tect\xF4nicas"
+  - "Giro da Terra em torno do seu pr\xF3prio eixo"
+  - Giro da Terra em torno do Sol
+  - "Inclina\xE7\xE3o do eixo terrestre"
+  indiceCorreto: 1

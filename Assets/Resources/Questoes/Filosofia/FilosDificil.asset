@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a656d7c88cbf04093bb217463e4c9e, type: 3}
+  m_Name: FilosDificil
+  m_EditorClassIdentifier: Assembly-CSharp::DadosDaQuestao
+  tema: Filosofia
+  dificuldade: 2
+  enunciado: "O que \xE9 o 'Imperativo Categ\xF3rico' de Kant?"
+  alternativas:
+  - "Agir conforme a tradi\xE7\xE3o religiosa"
+  - "Agir de forma que sua a\xE7\xE3o possa se tornar uma lei universal"
+  - A lei do mais forte
+  - "Busca pelo prazer m\xE1ximo"
+  indiceCorreto: 1
