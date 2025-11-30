@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Quest-N-Guns.sln"
+    "dotnet.defaultSolution": "Quest_n_Guns.sln"
 }
