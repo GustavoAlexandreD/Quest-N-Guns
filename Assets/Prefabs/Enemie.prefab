@@ -398,8 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014a404ec0a17eb41be843bdbfe7a4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  speed: 1
-  randomMoveChangeInterval: 5
+  speed: 3
+  randomMoveChangeInterval: 10
 --- !u!114 &3253238749099260761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc77e16321416e642a95a117575eda33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAwarenessController
-  playerAwarenessDistance: 5
+  playerAwarenessDistance: 8
 --- !u!58 &530506518941309288
 CircleCollider2D:
   m_ObjectHideFlags: 0
