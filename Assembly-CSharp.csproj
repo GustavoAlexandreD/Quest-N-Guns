@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Game\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Scripts\music\MusicSelector.cs" />
     <Compile Include="Assets\Scripts\BrilhoGlobal.cs" />
+    <Compile Include="Assets\Scripts\Game\Waves\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Quiz\PontoDeQuestao.cs" />
     <Compile Include="Assets\Scripts\Lobby\TemaManager.cs" />
     <Compile Include="Assets\Scripts\Quiz\QuizUI.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\Game\Enemie\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\music\MusicaGlobal.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemie\EnemyDeathHandler.cs" />
     <Compile Include="Assets\Scripts\Jogador.cs" />
     <Compile Include="Assets\Scripts\Game\Player\PlayerShoot.cs" />
   </ItemGroup>

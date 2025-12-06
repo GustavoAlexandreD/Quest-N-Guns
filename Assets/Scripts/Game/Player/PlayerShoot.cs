@@ -21,6 +21,8 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (fireContinuously || fireSingle)
         {
             float timeSinceLastFire = Time.time - lastFireTime;
@@ -47,6 +49,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void OnFire(InputValue inputValue)
     {
+        if (Time.timeScale == 0) return;
+
         fireContinuously = inputValue.isPressed;
 
         if (inputValue.isPressed)

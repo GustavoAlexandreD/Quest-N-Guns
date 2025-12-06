@@ -12,8 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float maximumSpawnTime;
 
-    [SerializeField]
-    private int maxEnemies;
+    public int maxEnemies;
 
     public static int currentEnemies = 0;  // contador global
 
@@ -47,6 +46,15 @@ public class EnemySpawner : MonoBehaviour
     private void SetTimeUntilSpawn()
     {
         timeUntilSpawn = UnityEngine.Random.Range(minimumSpawnTime, maximumSpawnTime);
+    }
+
+    public void ForceSpawnInitialEnemies()
+    {
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            EnemySpawner.currentEnemies++;
+        }
     }
 }
 

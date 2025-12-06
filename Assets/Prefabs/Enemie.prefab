@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 8859103074121426162}
   - component: {fileID: 1358126306190999534}
   - component: {fileID: 312038706816722575}
+  - component: {fileID: 2228510557357154183}
   m_Layer: 0
   m_Name: Enemie
   m_TagString: Untagged
@@ -521,6 +522,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52ff30a6e66f7b4cb6193e5d267941f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
+--- !u!114 &2228510557357154183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716213014644057219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3941b568acad142ba0d65be9ddcafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathHandler
 --- !u!1 &8917026996556651558
 GameObject:
   m_ObjectHideFlags: 0
