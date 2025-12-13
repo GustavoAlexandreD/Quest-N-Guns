@@ -20,12 +20,12 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        EnemyWaveStats.CurrentWave = waveNumber; // inicializa
         StartWave();
     }
 
     private void Update()
     {
-        // Se os inimigos acabaram
         if (EnemySpawner.currentEnemies == 0)
         {
             NextWave();
@@ -34,22 +34,19 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave()
     {
-        // reseta posição do player
         player.position = playerSpawnPoint.position;
 
-        // calcula quantos inimigos essa wave terá
         enemySpawner.maxEnemies = baseEnemiesPerWave + (waveNumber - 1) * 2;
 
-        // reseta contador
         EnemySpawner.currentEnemies = 0;
 
-        // força o spawn inicial
         enemySpawner.ForceSpawnInitialEnemies();
     }
 
     private void NextWave()
     {
         waveNumber++;
+        EnemyWaveStats.CurrentWave = waveNumber;  // <-- AQUI
         StartWave();
     }
 }

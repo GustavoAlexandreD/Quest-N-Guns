@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    private float randomMoveChangeInterval = 2f; // tempo para mudar a direção aleatória
+    private float randomMoveChangeInterval = 2f;
 
     private Rigidbody2D rigidBody;
     private PlayerAwarenessController playerAwarenessController;
@@ -30,20 +30,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void UpdateTargetDirection()
     {
-        // --- Perseguir o player se estiver perto ---
         if (playerAwarenessController.AwareOfPlayer)
         {
             targetDirection = playerAwarenessController.DirectionToPlayer.normalized;
             return;
         }
 
-        // --- Movimento aleatório quando o player NÃO está perto ---
         if (Time.time >= nextRandomDirectionTime)
         {
-            // gera uma direção aleatória
             targetDirection = UnityEngine.Random.insideUnitCircle.normalized;
-
-            // marca quando será gerada outra direção
             nextRandomDirectionTime = Time.time + randomMoveChangeInterval;
         }
     }
@@ -52,4 +47,10 @@ public class EnemyMovement : MonoBehaviour
     {
         rigidBody.linearVelocity = targetDirection * speed;
     }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
 }
+

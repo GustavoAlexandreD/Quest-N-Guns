@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 1358126306190999534}
   - component: {fileID: 312038706816722575}
   - component: {fileID: 2228510557357154183}
+  - component: {fileID: 1130618849152688452}
   m_Layer: 0
   m_Name: Enemie
   m_TagString: Untagged
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014a404ec0a17eb41be843bdbfe7a4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  speed: 3
+  speed: 0
   randomMoveChangeInterval: 10
 --- !u!114 &3253238749099260761
 MonoBehaviour:
@@ -462,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85554a6c7200b734b9669bea46db92f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damageAmount: 10
+  damageAmount: 0
 --- !u!114 &1358126306190999534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +535,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3941b568acad142ba0d65be9ddcafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathHandler
+--- !u!114 &1130618849152688452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716213014644057219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186104bb8a19db4baae8dc64c607741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStatsInitializer
+  baseHealth: 12
+  baseDamage: 15
+  baseSpeed: 3
 --- !u!1 &8917026996556651558
 GameObject:
   m_ObjectHideFlags: 0
