@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -12,9 +12,18 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var health = collision.GetComponent<HealthController>();
+
         if (health != null && collision.GetComponent<EnemyMovement>())
         {
             health.TakeDamage(damageAmount);
+
+            // 🩸 Vampirismo
+            Vampirism vampirism = FindFirstObjectByType<Vampirism>();
+            if (vampirism != null)
+            {
+                vampirism.AplicarCura(damageAmount);
+            }
+
             Destroy(gameObject);
             return;
         }
@@ -24,4 +33,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

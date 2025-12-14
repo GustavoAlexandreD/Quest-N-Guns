@@ -2080,6 +2080,8 @@ MonoBehaviour:
   playerMovement: {fileID: 1918532379}
   playerDamage: {fileID: 1918532386}
   playerShoot: {fileID: 1918532382}
+  thornsDamage: {fileID: 1918532387}
+  vampirism: {fileID: 1918532388}
   painelQuiz: {fileID: 206056865}
   geradorDePerguntas: {fileID: 647302949}
   textoEnunciado: {fileID: 260727691}
@@ -3988,6 +3990,8 @@ GameObject:
   - component: {fileID: 1918532384}
   - component: {fileID: 1918532385}
   - component: {fileID: 1918532386}
+  - component: {fileID: 1918532387}
+  - component: {fileID: 1918532388}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4257,6 +4261,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamage
   baseDamage: 10
+--- !u!114 &1918532387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918532375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22370a0b90db2a5419f8cc8e7ad05f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThornsDamage
+  thornsDamage: 10
+--- !u!114 &1918532388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918532375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d806dedcde24d7346ab772cf5f867d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vampirism
+  lifeStealPercent: 0.2
 --- !u!1 &2102020679
 GameObject:
   m_ObjectHideFlags: 0

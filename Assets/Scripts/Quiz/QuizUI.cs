@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections.Generic;
 using TMPro; 
+using UnityEngine;
 using UnityEngine.UI;
 
 public class QuizUI : MonoBehaviour
@@ -10,6 +11,10 @@ public class QuizUI : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerDamage playerDamage;
     public PlayerShoot playerShoot;
+    public ThornsDamage thornsDamage;
+    public Vampirism vampirism;
+
+    private List<TipoRecompensa> recompensasDisponiveis;
 
     [Header("Conexões")]
     public GameObject painelQuiz; // Arraste o painel da UI aqui
@@ -31,8 +36,16 @@ public class QuizUI : MonoBehaviour
 
     void Start()
     {
-        // Garante que o botão de fechar chame a função certa
         botaoFechar.onClick.AddListener(FecharPainel);
+
+        recompensasDisponiveis = new List<TipoRecompensa>
+    {
+        TipoRecompensa.Vida,
+        TipoRecompensa.Velocidade,
+        TipoRecompensa.Dano,
+        TipoRecompensa.Cadencia,
+        TipoRecompensa.Espinhos
+    };
     }
 
     public void ExibirProximaQuestao()
@@ -108,28 +121,54 @@ public class QuizUI : MonoBehaviour
             botoesResposta[indiceEscolhido].image.color = Color.green;
 
             // RECOMPENSA ALEATÓRIA
-            int recompensa = Random.Range(0, 4);
+            TipoRecompensa recompensa = recompensasDisponiveis[Random.Range(0, recompensasDisponiveis.Count)];
 
             switch (recompensa)
             {
-                case 0:
+                case TipoRecompensa.Vida:
                     playerHealth?.IncreaseMaxHealth(50f);
                     textoFeedback.text += "\n+50 Vida Máxima!";
                     break;
 
-                case 1:
+                case TipoRecompensa.Velocidade:
                     playerMovement?.AddSpeed(3f);
                     textoFeedback.text += "\n+3 Velocidade!";
                     break;
 
-                case 2:
+                case TipoRecompensa.Dano:
                     playerDamage?.AddDamage(2f);
                     textoFeedback.text += "\n+2 Dano!";
                     break;
 
-                case 3:
+                case TipoRecompensa.Cadencia:
                     playerShoot?.ReduceFireRate(0.2f);
                     textoFeedback.text += "\n+Cadência de Tiro!";
+                    break;
+
+                case TipoRecompensa.Espinhos:
+                    if (thornsDamage != null && !thornsDamage.Ativo)
+                    {
+                        thornsDamage.Ativar();
+                        textoFeedback.text += "\n+Espinhos (50 dano ao toque)!";
+                        recompensasDisponiveis.Remove(TipoRecompensa.Espinhos);
+                    }
+                    else
+                    {
+                        textoFeedback.text += "\nEspinhos já adquiridos.";
+                    }
+                    break;
+
+                case TipoRecompensa.Vampirismo:
+                    if (vampirism != null && !vampirism.Ativo)
+                    {
+                        vampirism.Ativar();
+                        textoFeedback.text += "\n+Vampirismo (20% de cura por dano)!";
+                        recompensasDisponiveis.Remove(TipoRecompensa.Vampirismo);
+                    }
+                    else
+                    {
+                        textoFeedback.text += "\nVampirismo já adquirido.";
+                    }
                     break;
             }
         }

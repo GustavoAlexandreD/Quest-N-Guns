@@ -65,11 +65,14 @@
     <Compile Include="Assets\Scripts\Quiz\GeradorQuiz.cs" />
     <Compile Include="Assets\Scripts\Game\Health\HealthController.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Game\Player\Vampirism.cs" />
+    <Compile Include="Assets\Scripts\Game\Player\ThornsDamage.cs" />
     <Compile Include="Assets\Scripts\Game\Player\PlayerInvincibility.cs" />
     <Compile Include="Assets\Scripts\Game\Waves\EnemyWaveStats.cs" />
     <Compile Include="Assets\Scripts\Lobby\EstadoBotao.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\PlayerAwarenessController.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Quiz\TipoRecompensa.cs" />
     <Compile Include="Assets\Scripts\Game\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Game\Enemie\EnemyMovement.cs" />
