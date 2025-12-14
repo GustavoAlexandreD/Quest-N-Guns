@@ -6,6 +6,10 @@ public class QuizUI : MonoBehaviour
 {
     public static QuizUI Instance;
 
+    public HealthController playerHealth;
+    public PlayerMovement playerMovement;
+    public PlayerDamage playerDamage;
+
     [Header("Conexões")]
     public GameObject painelQuiz; // Arraste o painel da UI aqui
     public GeradorQuiz geradorDePerguntas; // Arraste seu script QuizGenerator aqui
@@ -100,7 +104,29 @@ public class QuizUI : MonoBehaviour
         {
             textoFeedback.text = "Resposta Correta!";
             textoFeedback.color = Color.green;
-            botoesResposta[indiceEscolhido].image.color = Color.green; // Pinta o botão de verde
+            botoesResposta[indiceEscolhido].image.color = Color.green;
+
+            // 🎁 RECOMPENSA ALEATÓRIA
+            int recompensa = Random.Range(0, 3);
+
+            switch (recompensa)
+            {
+                case 0:
+                    playerHealth?.AddHealth(50f);
+                    textoFeedback.text += "\n+50 Vida!";
+                    break;
+
+                case 1:
+                    playerMovement?.AddSpeed(3f);
+                    textoFeedback.text += "\n+3 Velocidade!";
+                    break;
+
+                case 2:
+                    playerDamage?.AddDamage(2f);
+                    textoFeedback.text += "\n+2 Dano!";
+                    break;
+            }
+
         }
         else
         {

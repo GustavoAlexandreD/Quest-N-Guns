@@ -19,6 +19,14 @@ public class PlayerShoot : MonoBehaviour
     private float lastFireTime;
     private bool fireSingle;
 
+    private PlayerDamage playerDamage;
+
+    private void Awake()
+    {
+        // Pega o dano atual do player
+        playerDamage = GetComponent<PlayerDamage>();
+    }
+
     void Update()
     {
         if (Time.timeScale == 0) return;
@@ -38,14 +46,24 @@ public class PlayerShoot : MonoBehaviour
     }
 
     private void FireBullet()
-    { 
-        GameObject bullet = Instantiate(bulletPrefab, gunOffSet.position, gunOffSet.rotation);
+    {
+        GameObject bulletObj = Instantiate(
+            bulletPrefab,
+            gunOffSet.position,
+            gunOffSet.rotation
+        );
 
-        Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
+        // Movimento da bala
+        Rigidbody2D rb = bulletObj.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = gunOffSet.up * bulletSpeed;
 
-        rigidbody.linearVelocity = gunOffSet.up * bulletSpeed;
+        // Passa o dano atual para a bala
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        if (bullet != null && playerDamage != null)
+        {
+            bullet.SetDamage(playerDamage.CurrentDamage);
+        }
     }
-
 
     private void OnFire(InputValue inputValue)
     {

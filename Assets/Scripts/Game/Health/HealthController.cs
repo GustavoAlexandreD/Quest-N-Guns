@@ -35,16 +35,16 @@ public class HealthController : MonoBehaviour
             OnDamage.Invoke();
     }
 
-    public void addHealth(float amount)
+    public void AddHealth(float amount)
     {
         if (currentHealth == 0) return;
 
         currentHealth += amount;
 
-        OnHealthChanged.Invoke();
-
         if (currentHealth > maximumHealth)
             currentHealth = maximumHealth;
+
+        OnHealthChanged.Invoke();
     }
 
     public void SetHealth(float value)

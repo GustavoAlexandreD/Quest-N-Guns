@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 235605351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6699998, y: 2.36, z: 0}
+  m_LocalPosition: {x: -3, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,7 +768,7 @@ Transform:
   m_GameObject: {fileID: 305197907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.54425, y: 0.43139, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2076,6 +2076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a807de8ed1555e4c95fd7adc42ede65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuizUI
+  playerHealth: {fileID: 1918532383}
+  playerMovement: {fileID: 1918532379}
+  playerDamage: {fileID: 1918532386}
   painelQuiz: {fileID: 206056865}
   geradorDePerguntas: {fileID: 647302949}
   textoEnunciado: {fileID: 260727691}
@@ -2386,7 +2389,7 @@ Transform:
   m_GameObject: {fileID: 744697506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2600002, y: 2.34, z: 0}
+  m_LocalPosition: {x: 6, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2846,7 +2849,7 @@ Transform:
   m_GameObject: {fileID: 1162480094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.64, y: 2.31, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2986,7 +2989,7 @@ Transform:
   m_GameObject: {fileID: 1180473962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.38, y: 2.34, z: 0}
+  m_LocalPosition: {x: 3, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3434,7 +3437,7 @@ Transform:
   m_GameObject: {fileID: 1316639934}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5600004, y: 2.28, z: 0}
+  m_LocalPosition: {x: -6, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3983,6 +3986,7 @@ GameObject:
   - component: {fileID: 1918532383}
   - component: {fileID: 1918532384}
   - component: {fileID: 1918532385}
+  - component: {fileID: 1918532386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4143,7 +4147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
   currentHealth: 100
-  maximumHealth: 100
+  maximumHealth: 350
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -4238,6 +4242,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20c11e50b1ea2e42956aaef781f21ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InvincibilityController
+--- !u!114 &1918532386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918532375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679e055e5908a714796564e21ecdd927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamage
+  baseDamage: 10
 --- !u!1 &2102020679
 GameObject:
   m_ObjectHideFlags: 0
