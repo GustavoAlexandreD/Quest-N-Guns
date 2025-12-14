@@ -2079,6 +2079,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1918532383}
   playerMovement: {fileID: 1918532379}
   playerDamage: {fileID: 1918532386}
+  playerShoot: {fileID: 1918532382}
   painelQuiz: {fileID: 206056865}
   geradorDePerguntas: {fileID: 647302949}
   textoEnunciado: {fileID: 260727691}
@@ -4133,7 +4134,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3157031107947745788, guid: dabf202fe628bea4186c6e7562ea0e18, type: 3}
   bulletSpeed: 8
   gunOffSet: {fileID: 1834365131}
-  timeBetweenShots: 0.5
+  timeBetweenShots: 1
+  minTimeBetweenShots: 0.1
 --- !u!114 &1918532383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,7 +4149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
   currentHealth: 100
-  maximumHealth: 350
+  maximumHealth: 100
   OnDied:
     m_PersistentCalls:
       m_Calls:

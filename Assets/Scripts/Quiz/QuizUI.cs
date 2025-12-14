@@ -9,6 +9,7 @@ public class QuizUI : MonoBehaviour
     public HealthController playerHealth;
     public PlayerMovement playerMovement;
     public PlayerDamage playerDamage;
+    public PlayerShoot playerShoot;
 
     [Header("Conexões")]
     public GameObject painelQuiz; // Arraste o painel da UI aqui
@@ -106,14 +107,14 @@ public class QuizUI : MonoBehaviour
             textoFeedback.color = Color.green;
             botoesResposta[indiceEscolhido].image.color = Color.green;
 
-            // 🎁 RECOMPENSA ALEATÓRIA
-            int recompensa = Random.Range(0, 3);
+            // RECOMPENSA ALEATÓRIA
+            int recompensa = Random.Range(0, 4);
 
             switch (recompensa)
             {
                 case 0:
-                    playerHealth?.AddHealth(50f);
-                    textoFeedback.text += "\n+50 Vida!";
+                    playerHealth?.IncreaseMaxHealth(50f);
+                    textoFeedback.text += "\n+50 Vida Máxima!";
                     break;
 
                 case 1:
@@ -125,8 +126,12 @@ public class QuizUI : MonoBehaviour
                     playerDamage?.AddDamage(2f);
                     textoFeedback.text += "\n+2 Dano!";
                     break;
-            }
 
+                case 3:
+                    playerShoot?.ReduceFireRate(0.2f);
+                    textoFeedback.text += "\n+Cadência de Tiro!";
+                    break;
+            }
         }
         else
         {

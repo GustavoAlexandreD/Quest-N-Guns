@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatsInitializer
   baseHealth: 12
-  baseDamage: 100
+  baseDamage: 10
   baseSpeed: 3
 --- !u!1 &8917026996556651558
 GameObject:

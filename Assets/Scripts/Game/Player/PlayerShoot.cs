@@ -15,6 +15,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private float timeBetweenShots;
 
+    [SerializeField]
+    private float minTimeBetweenShots = 0.1f;
+
     private bool fireContinuously;
     private float lastFireTime;
     private bool fireSingle;
@@ -75,5 +78,10 @@ public class PlayerShoot : MonoBehaviour
         {
             fireSingle = true;
         }
+    }
+
+    public void ReduceFireRate(float amount)
+    {
+        timeBetweenShots = Mathf.Max(minTimeBetweenShots, timeBetweenShots - amount);
     }
 }
