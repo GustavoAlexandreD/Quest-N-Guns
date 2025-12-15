@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using TMPro; 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +7,7 @@ public class QuizUI : MonoBehaviour
 {
     public static QuizUI Instance;
 
+    [Header("Referências do Jogador")]
     public HealthController playerHealth;
     public PlayerMovement playerMovement;
     public PlayerDamage playerDamage;
@@ -17,21 +18,24 @@ public class QuizUI : MonoBehaviour
     private List<TipoRecompensa> recompensasDisponiveis;
 
     [Header("Conexões")]
-    public GameObject painelQuiz; // Arraste o painel da UI aqui
-    public GeradorQuiz geradorDePerguntas; // Arraste seu script QuizGenerator aqui
+    public GameObject painelQuiz;
+    public GeradorQuiz geradorDePerguntas;
 
-    // UI Elementos (Arraste seus textos e botões)
+    [Header("UI")]
     public TextMeshProUGUI textoEnunciado;
     public TextMeshProUGUI textoFeedback;
-    public Button[] botoesResposta; 
+    public Button[] botoesResposta;
     public Button botaoFechar;
 
     private DadosDaQuestao questaoAtual;
 
+    // =====================================================
+
     void Awake()
     {
         Instance = this;
-        painelQuiz.SetActive(false); // Começa escondido
+        painelQuiz.SetActive(false);
+
     }
 
     void Start()
@@ -39,23 +43,25 @@ public class QuizUI : MonoBehaviour
         botaoFechar.onClick.AddListener(FecharPainel);
 
         recompensasDisponiveis = new List<TipoRecompensa>
-    {
-        TipoRecompensa.Vida,
-        TipoRecompensa.Velocidade,
-        TipoRecompensa.Dano,
-        TipoRecompensa.Cadencia,
-        TipoRecompensa.Espinhos
-    };
+        {
+            TipoRecompensa.Vida,
+            TipoRecompensa.Velocidade,
+            TipoRecompensa.Dano,
+            TipoRecompensa.Cadencia,
+            TipoRecompensa.Espinhos
+        };
     }
+
+    // =====================================================
+    // EXIBIÇÃO DO QUIZ
+    // =====================================================
 
     public void ExibirProximaQuestao()
     {
-        // Pede ao gerador (que já filtrou por tema) a próxima questão
-        if(geradorDePerguntas.questoesDaPartida.Count > 0)
+        if (geradorDePerguntas.questoesDaPartida.Count > 0)
         {
-            // Pega a primeira da fila
             questaoAtual = geradorDePerguntas.questoesDaPartida[0];
-            geradorDePerguntas.questoesDaPartida.RemoveAt(0); // Remove para não repetir
+            geradorDePerguntas.questoesDaPartida.RemoveAt(0);
 
             MontarTela(questaoAtual);
         }
@@ -68,60 +74,56 @@ public class QuizUI : MonoBehaviour
     void MontarTela(DadosDaQuestao q)
     {
         painelQuiz.SetActive(true);
-        Time.timeScale = 0; // ⏸ PAUSA O JOGO (física e movimento param)
+        Time.timeScale = 0;
+
+        Timer.Instance?.Resetar(); // 🔄 reinicia o tempo sempre que abre o quiz
 
         textoEnunciado.text = q.enunciado;
-        textoFeedback.text = ""; // Limpa feedback anterior
-        botaoFechar.gameObject.SetActive(false); // Esconde botão de fechar (obriga a responder)
+        textoFeedback.text = "";
+        textoFeedback.color = Color.white;
+        botaoFechar.gameObject.SetActive(false);
 
-        // --- LÓGICA DE PREENCHIMENTO DOS BOTÕES ---
         for (int i = 0; i < botoesResposta.Length; i++)
         {
-            // Reseta estado visual do botão (pode ter ficado vermelho/verde da anterior)
-            botoesResposta[i].interactable = true; 
-            botoesResposta[i].image.color = Color.white; 
+            botoesResposta[i].interactable = true;
+            botoesResposta[i].image.color = Color.white;
 
-            // Verifica se existe texto para esse botão (caso a questão tenha menos alternativas que botões)
             if (i < q.alternativas.Length)
             {
                 botoesResposta[i].gameObject.SetActive(true);
-                
-                // Pega o componente de texto dentro do botão e muda
-                botoesResposta[i].GetComponentInChildren<TextMeshProUGUI>().text = q.alternativas[i];
+                botoesResposta[i]
+                    .GetComponentInChildren<TextMeshProUGUI>().text = q.alternativas[i];
 
-                // TRUQUE DO C#: Precisamos copiar o índice para usar dentro do listener
-                int indiceDoBotao = i;
-
-                // Remove cliques antigos (para não acumular) e adiciona o novo
+                int indice = i;
                 botoesResposta[i].onClick.RemoveAllListeners();
-                botoesResposta[i].onClick.AddListener(() => AoClicarResposta(indiceDoBotao));
+                botoesResposta[i].onClick.AddListener(() => AoClicarResposta(indice));
             }
             else
             {
-                // Se não tem alternativa (ex: botão 5, mas só tem 4 respostas), esconde o botão
                 botoesResposta[i].gameObject.SetActive(false);
             }
         }
     }
 
-    // --- LÓGICA DE VERIFICAÇÃO ---
+    // =====================================================
+    // RESPOSTA DO JOGADOR
+    // =====================================================
+
     void AoClicarResposta(int indiceEscolhido)
     {
-        // 1. Bloqueia todos os botões para o jogador não clicar mais
-        foreach (var btn in botoesResposta)
-        {
-            btn.interactable = false;
-        }
+        Timer.Instance?.Pausar(); // ⏸ para o timer ao responder
 
-        // 2. Verifica se acertou
+        foreach (var btn in botoesResposta)
+            btn.interactable = false;
+
         if (indiceEscolhido == questaoAtual.indiceCorreto)
         {
             textoFeedback.text = "Resposta Correta!";
             textoFeedback.color = Color.green;
             botoesResposta[indiceEscolhido].image.color = Color.green;
 
-            // RECOMPENSA ALEATÓRIA
-            TipoRecompensa recompensa = recompensasDisponiveis[Random.Range(0, recompensasDisponiveis.Count)];
+            TipoRecompensa recompensa =
+                recompensasDisponiveis[Random.Range(0, recompensasDisponiveis.Count)];
 
             switch (recompensa)
             {
@@ -149,12 +151,8 @@ public class QuizUI : MonoBehaviour
                     if (thornsDamage != null && !thornsDamage.Ativo)
                     {
                         thornsDamage.Ativar();
-                        textoFeedback.text += "\n+Espinhos (50 dano ao toque)!";
+                        textoFeedback.text += "\n+Espinhos!";
                         recompensasDisponiveis.Remove(TipoRecompensa.Espinhos);
-                    }
-                    else
-                    {
-                        textoFeedback.text += "\nEspinhos já adquiridos.";
                     }
                     break;
 
@@ -162,12 +160,8 @@ public class QuizUI : MonoBehaviour
                     if (vampirism != null && !vampirism.Ativo)
                     {
                         vampirism.Ativar();
-                        textoFeedback.text += "\n+Vampirismo (20% de cura por dano)!";
+                        textoFeedback.text += "\n+Vampirismo!";
                         recompensasDisponiveis.Remove(TipoRecompensa.Vampirismo);
-                    }
-                    else
-                    {
-                        textoFeedback.text += "\nVampirismo já adquirido.";
                     }
                     break;
             }
@@ -176,25 +170,45 @@ public class QuizUI : MonoBehaviour
         {
             textoFeedback.text = "Incorreto!";
             textoFeedback.color = Color.red;
-            botoesResposta[indiceEscolhido].image.color = Color.red; // Pinta o escolhido de vermelho
-            
-            // Mostra qual era o correto pintando de verde
+            botoesResposta[indiceEscolhido].image.color = Color.red;
+
             if (questaoAtual.indiceCorreto < botoesResposta.Length)
-            {
                 botoesResposta[questaoAtual.indiceCorreto].image.color = Color.green;
-            }
         }
 
-        // 3. Mostra o botão de fechar para o jogador voltar ao jogo
         botaoFechar.gameObject.SetActive(true);
     }
 
-    // --- LÓGICA DE FECHAR ---
+    // =====================================================
+    // TEMPO ESGOTADO
+    // =====================================================
+
+    public void TempoEsgotado()
+    {
+        foreach (var btn in botoesResposta)
+            btn.interactable = false;
+
+        textoFeedback.text = "⏰ Acabou o tempo!";
+        textoFeedback.color = Color.red;
+
+        if (questaoAtual != null &&
+            questaoAtual.indiceCorreto < botoesResposta.Length)
+        {
+            botoesResposta[questaoAtual.indiceCorreto].image.color = Color.green;
+        }
+
+        botaoFechar.gameObject.SetActive(true);
+    }
+
+    // =====================================================
+    // FECHAR QUIZ
+    // =====================================================
+
     void FecharPainel()
     {
         painelQuiz.SetActive(false);
-        Time.timeScale = 1; // ▶ DESPAUSA O JOGO (tudo volta a se mover)
+        Time.timeScale = 1;
+
+        Timer.Instance?.Resetar();   // prepara para o próximo quiz
     }
-
-
 }
