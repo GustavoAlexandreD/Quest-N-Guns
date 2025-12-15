@@ -46,7 +46,7 @@ public class WaveManager : MonoBehaviour
     private void NextWave()
     {
         waveNumber++;
-        EnemyWaveStats.CurrentWave = waveNumber;  // <-- AQUI
+        EnemyWaveStats.CurrentWave = waveNumber;  
         StartWave();
     }
 }

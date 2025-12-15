@@ -1,20 +1,19 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyPrefab;
 
-    [SerializeField]
-    private float minimumSpawnTime;
+    [SerializeField] private float minimumSpawnTime;
+    [SerializeField] private float maximumSpawnTime;
 
-    [SerializeField]
-    private float maximumSpawnTime;
+    [SerializeField] private Vector2 minSpawnPosition;
+    [SerializeField] private Vector2 maxSpawnPosition;
 
     public int maxEnemies;
-
-    public static int currentEnemies = 0;  // contador global
+    public static int currentEnemies = 0;
 
     private float timeUntilSpawn;
 
@@ -37,24 +36,32 @@ public class EnemySpawner : MonoBehaviour
     private void TrySpawnEnemy()
     {
         if (currentEnemies >= maxEnemies)
-            return; // NÃO SPAWNA SE PASSOU DO LIMITE
+            return;
 
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        SpawnEnemy();
+    }
+
+    private void SpawnEnemy()
+    {
+        Vector2 spawnPos = new Vector2(
+            Random.Range(minSpawnPosition.x, maxSpawnPosition.x),
+            Random.Range(minSpawnPosition.y, maxSpawnPosition.y)
+        );
+
+        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
         currentEnemies++;
     }
 
     private void SetTimeUntilSpawn()
     {
-        timeUntilSpawn = UnityEngine.Random.Range(minimumSpawnTime, maximumSpawnTime);
+        timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
     }
 
     public void ForceSpawnInitialEnemies()
     {
         for (int i = 0; i < maxEnemies; i++)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            EnemySpawner.currentEnemies++;
+            SpawnEnemy();
         }
     }
 }
-
