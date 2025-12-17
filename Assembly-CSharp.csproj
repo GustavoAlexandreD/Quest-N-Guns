@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Quiz\PontoDeQuestao.cs" />
     <Compile Include="Assets\Scripts\Lobby\TemaManager.cs" />
     <Compile Include="Assets\Scripts\FimDeJogoManager.cs" />
+    <Compile Include="Assets\Scripts\BrilhoSlider.cs" />
     <Compile Include="Assets\Scripts\Quiz\QuizUI.cs" />
     <Compile Include="Assets\Scripts\Game\Health\HealthBarUI.cs" />
     <Compile Include="Assets\Scripts\music\VolumeSlider.cs" />

@@ -12,7 +12,7 @@ public class GlobalBrightness : MonoBehaviour
     [Range(0, 255)]
     public int defaultAlpha = 70;   // Valor inicial
 
-    private const string PREF_KEY = "global_brightness";
+    public const string PREF_KEY = "global_brightness";
 
     private void Awake()
     {
