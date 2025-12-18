@@ -188,7 +188,7 @@ public class QuizUI : MonoBehaviour
         foreach (var btn in botoesResposta)
             btn.interactable = false;
 
-        textoFeedback.text = "⏰ Acabou o tempo!";
+        textoFeedback.text = "Acabou o tempo!";
         textoFeedback.color = Color.red;
 
         if (questaoAtual != null &&
