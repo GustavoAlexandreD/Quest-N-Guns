@@ -138,12 +138,12 @@ public class QuizUI : MonoBehaviour
                     break;
 
                 case TipoRecompensa.Dano:
-                    playerDamage?.AddDamage(2f);
-                    textoFeedback.text += "\n+2 Dano!";
+                    playerDamage?.AddDamage(10f);
+                    textoFeedback.text += "\n+10 Dano!";
                     break;
 
                 case TipoRecompensa.Cadencia:
-                    playerShoot?.ReduceFireRate(0.2f);
+                    playerShoot?.ReduceFireRate(0.4f);
                     textoFeedback.text += "\n+Cadência de Tiro!";
                     break;
 
